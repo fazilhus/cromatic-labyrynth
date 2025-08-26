@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://i0roims7pkym"]
+
+[ext_resource type="Shader" uid="uid://bpcy1v5kw6rqq" path="res://scripts/shaders/monochrome.gdshader" id="1_xfsgl"]
+[ext_resource type="Texture2D" uid="uid://dxe2vwet64g0p" path="res://assets/palletes/golden-sunset-1x.png" id="2_r7jss"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xfsgl")
+shader_parameter/Albedo = Color(1, 1, 1, 1)
+shader_parameter/Roughness = 1.0
+shader_parameter/Metallicness = 0.3
+shader_parameter/grades = PackedFloat32Array(0.75, 0.5, 0.25, 0)
+shader_parameter/palette = ExtResource("2_r7jss")

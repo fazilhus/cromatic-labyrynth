@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://bffw585rv0u2"]
+
+[ext_resource type="Script" uid="uid://b6lego6ldb4rb" path="res://scripts/world.gd" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://jvmqnk8uh8a3" path="res://scenes/spaw_point.tscn" id="2_rwgxs"]
+[ext_resource type="Material" uid="uid://i0roims7pkym" path="res://resources/monochrome_mat.tres" id="3_4wyf3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rwgxs"]
+size = Vector2(10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rwgxs"]
+size = Vector3(10, 3, 0.125)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4wyf3"]
+size = Vector3(10, 3, 0.125)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k0juu"]
+size = Vector3(10, 3, 0.125)
+
+[sub_resource type="BoxMesh" id="BoxMesh_71j4m"]
+size = Vector3(10, 3, 0.125)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_nnsk1")
+
+[node name="SpawPoint" parent="." instance=ExtResource("2_rwgxs")]
+unique_name_in_owner = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_rwgxs")
+surface_material_override/0 = ExtResource("3_4wyf3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 5)
+mesh = SubResource("BoxMesh_rwgxs")
+surface_material_override/0 = ExtResource("3_4wyf3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
+mesh = SubResource("BoxMesh_4wyf3")
+surface_material_override/0 = ExtResource("3_4wyf3")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 1.5, 0)
+mesh = SubResource("BoxMesh_k0juu")
+surface_material_override/0 = ExtResource("3_4wyf3")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 1.5, 0)
+mesh = SubResource("BoxMesh_71j4m")
+surface_material_override/0 = ExtResource("3_4wyf3")
